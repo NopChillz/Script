@@ -105,7 +105,7 @@ if BF then
 	local LocalPlayer = game:GetService("Players").LocalPlayer
 	local MyNameIs = LocalPlayer.Name
 	local Mouse = LocalPlayer:GetMouse()
-	local CloseBind = Enum.KeyCode.RightControl
+	local CloseBind = Enum.KeyCode.Insert
 	
 	local ScreenGui = Instance.new("ScreenGui")
 	local TabButtonLayout = Instance.new("UIListLayout")
@@ -114,7 +114,7 @@ if BF then
 	ScreenGui.Parent = game.CoreGui.RobloxGui
 	local uitoggled = false
 	UserInputService.InputBegan:Connect(function(io, p)
-		if io.KeyCode == Enum.KeyCode.RightControl then
+		if io.KeyCode == Enum.KeyCode.Insert then
 			if uitoggled == false then
 				ScreenGui.Enabled = false
 				uitoggled = true
@@ -328,7 +328,7 @@ if BF then
 		Toggleui.Position = UDim2.new(0.803076923, 0, 0, 0)
 		Toggleui.Size = UDim2.new(0, 120, 0, 30)
 		Toggleui.Font = Enum.Font.SourceSansSemibold
-		Toggleui.Text = "[ Right Control ]"
+		Toggleui.Text = "[ Insert ]"
 		Toggleui.TextColor3 = Color3.fromRGB(255, 0, 0)
 		Toggleui.TextSize = 20.000
 	
@@ -5023,6 +5023,8 @@ if BF then
 	RaidsTab:Button("Open Awaked",function()
 		game.Players.localPlayer.PlayerGui.Main.AwakeningToggler.Visible = true
 	end)
+	RaidsTab:Line()
+	RaidsTab:DestroyGui()
 	function TP(P)
 		NoClip = true
 		Distance = (P.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
